@@ -2,6 +2,7 @@
 
 * {
     font-family: 'Helvetica Neue';
+    z-index: 1;
 }
 
 body {
@@ -19,11 +20,12 @@ body {
     border-bottom: 10px solid rgba(128, 128, 128, 0.26);
 }
 
-.landing-page img {
+.background img {
     margin: 0;
     object-fit: cover;
     width: 100%;
     height: 800px;
+    z-index: -1;
 }
 
 .black-shade-bg {
@@ -33,6 +35,7 @@ body {
     background: radial-gradient(rgba(0, 0, 0, 0), black);
     width: 100%;
     height: 800px;
+    z-index: 0;
 }
 
 .content {
@@ -43,20 +46,20 @@ body {
     color:aliceblue
 }
 
-.landing-page .navbar {
+.navbar {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
     padding: 30px 30px 0px 30px;
     box-sizing: border-box;
+    z-index: 2;
 }
 
-.navbar .logo {
-    color: red;
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: 2px;
+.navbar .logo-original {
+    height: 50px;
+    object-fit: contain;
+    cursor: pointer;
 }
 
 .navbar .signin {
@@ -64,7 +67,7 @@ body {
     padding: 10px 15px;
     background-color: red;
     color: white;
-    /* margin: 10px; */
+    cursor: pointer;
     margin-left: auto;
     border: 0px;
     border-radius: 5px;
@@ -135,6 +138,7 @@ body {
     height: 100%;
     border: 0;
     padding: 0px 26px;
+    cursor: pointer;
 }
 
 .jumbotron {
@@ -394,8 +398,230 @@ body {
     text-decoration: underline;
 }
 
+/* here we write the code to disable the default-page */
+.default-page.disabled {
+    display: none;
+}
 
 
+/* Now we move on to sign in page */
+.sign-in-section {
+    background-color: black;
+    width: 450px;
+    color: rgba(128, 128, 128, 0.822);
+    margin: auto;
+    padding: 80px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.sign-in-header {
+    color: white;
+    font-size: 30px;
+}
+
+.sign-in-header p {
+    margin-top: 0px;
+}
+
+.sign-in-input-area {
+    height: 50px;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.26);
+    border-radius: 5px;
+    border: none;
+    margin: 20px auto;
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-size: 15px;
+    color: white;
+}
+
+.sign-in-btn {
+    display: block;
+    width: 100%;
+    background-color: red;
+    margin: 20px auto;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer
+}
+
+.sign-in-below-options {
+    display: flex;
+    margin: 20px 0px;
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.63);
+}
+
+.sign-in-below-options input {
+    size: 25px;
+    background-color: rgba(128, 128, 128, 0.822);
+}
+
+.sign-in-below-options label {
+    margin: 0px 5px;
+}
+
+.sign-in-below-options p {
+    position: relative;
+    margin: 0px;
+    margin-left: auto;
+}
+
+.facebook-login {
+    height: 20px;
+    display: flex;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.facebook-login img {
+    margin-right: 20px;
+}
+
+.facebook-login p {
+    margin-top: 0px;
+}
+
+.new-to-netflix {
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.sign-up {
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.712);
+    cursor: pointer;
+}
+
+.sign-up:hover {
+    text-decoration: underline;
+}
+
+.captcha {
+    display: flex;
+}
+
+.captcha a {
+    text-decoration: none;
+    color: blue;
+}
+
+
+/* Now we start to develop the showcase movies section */
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: fit-content;
+}
+
+.showcase-bg {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+}
+
+.showcase-bg img {
+    position: relative;
+    object-fit: contain;
+    width: 100%;
+    z-index: 1;
+}
+
+.showcase-main-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.showcase-content {
+    z-index: 3;
+    color: white;
+    max-width: 50%;
+    bottom: 50px;
+    margin-left: 80px;
+    margin-top: 10%;
+}
+
+.play-button {
+    height: 30px;
+    width: 80px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.movies-slide {
+    position: relative;
+    margin: 30px;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+
+.movies-slide h5 {
+    color: white;
+    font-size: 20px;
+    margin: 30px 0px 10px 20px;
+}
+
+.movies-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.movies-list img {
+    width: 100%;
+    min-width: 140px;
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow-x: scroll;
+    transition: 0.3s;
+}
+
+.movies-list img:hover {
+    width: 100% +10px;
+    height: auto;
+    scale: 1.1;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.enlarged-card-section {
+    position: relative;
+    display: flex;
+    height: 40vh;
+    margin: 5px auto;
+}
+
+.card-text-info {
+    position: relative;
+    color: white;
+    z-index: 2;
+    width: 40%
+}
+
+.enlarged-card-section img {
+    position: absolute;
+    right:0;
+    height: 100%;
+    max-width: 140%;
+    object-fit: cover;
+}
 
 
 
@@ -425,7 +651,43 @@ body {
         font-size: 10px !important;
     }
 
+    .card-text-info {
+        width: 80%;
+    }
 
+
+}
+
+@media screen and (max-width: 865px) {
+    .sign-in-page .background {
+        visibility: hidden;
+    }
+
+    .sign-in-page .navbar img {
+        scale: 0.6;
+        position: absolute;
+        top: 20px;
+        left: 0px;
+    }
+
+    .sign-in-section {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.822);
+    }
+
+    .showcase-movies .navbar img {
+        scale: 0.6;
+    }
+
+    .showcase-content {
+        margin-top: 0px;
+        max-width: 80%;
+    }
+
+    .card-text-info {
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 1090px) {
@@ -488,4 +750,10 @@ body {
     }
 
     
+    
+    
+}
+
+.disabled {
+    display: none;
 }
